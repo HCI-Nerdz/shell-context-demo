@@ -1,1 +1,250 @@
-:root{--bg:#0f1117;--fg:#e6e8ef;--gutter:#000;--app-bg:#2a2d35;--app-fg:#c8ccd4;--host-bg:#1a3a5c;--host-fg:#b8d4f0;--focus-ring:#f0a020;--overlay-border:#5a9bb0;--muted:#888;font-family:Consolas,monospace}.theme-high-contrast{--bg:#000;--fg:#fff;--app-bg:#333;--host-bg:#04a;--focus-ring:#ff0}body{margin:0;background:var(--bg);color:var(--fg)}.desk{max-width:960px;margin:0 auto;padding:1.5rem}.toolbar{display:flex;gap:.75rem;margin-bottom:1rem;flex-wrap:wrap}.toolbar button{background:var(--app-bg);color:var(--app-fg);border:1px solid var(--muted);padding:.35rem .75rem;cursor:pointer;font:inherit}.terminal{border:1px solid var(--muted);border-radius:4px}.paste-overlay{border-bottom:2px solid var(--overlay-border);padding:.5rem .75rem;background:#151820}.paste-overlay.hidden{display:none}.paste-title,.paste-hint{font-size:.75rem;color:var(--muted)}.prompt-row{display:flex;background:#12141a}.gutter{width:2rem;background:var(--gutter);display:flex;align-items:center;justify-content:center}.gutter-help{color:#666;background:transparent;border:none;cursor:not-allowed}.tokens{display:flex;gap:.35rem;padding:.35rem .5rem;flex-wrap:wrap;flex:1}.token{padding:.15rem .45rem;border-radius:3px;font-size:.85rem}.token.app{background:var(--app-bg);color:var(--app-fg)}.token.host{background:var(--host-bg);color:var(--host-fg)}.token.focused{outline:2px solid var(--focus-ring)}.prompt-input{padding:.35rem .5rem;display:flex;gap:.25rem;align-items:center}.chevron{color:var(--muted)}.output{padding:.75rem;font-size:.85rem;color:var(--muted);border-top:1px solid #222}.hint-bar{font-size:.75rem;color:var(--muted)}
+:root {
+  --bg: #0f1117;
+  --fg: #e6e8ef;
+  --gutter: #000;
+  --app-bg: #2a2d35;
+  --app-fg: #c8ccd4;
+  --host-bg: #1a3a5c;
+  --host-fg: #b8d4f0;
+  --focus-ring: #f0a020;
+  --overlay-border: #5a9bb0;
+  --muted: #888;
+  --gutter-w: 2rem;
+  font-family: Consolas, "Cascadia Mono", monospace;
+}
+.theme-high-contrast {
+  --bg: #000;
+  --fg: #fff;
+  --app-bg: #333;
+  --host-bg: #04a;
+  --focus-ring: #ff0;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+}
+.desk {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+.tui-topbar {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  background: #151820;
+  border: 1px solid var(--muted);
+  border-radius: 4px 4px 0 0;
+}
+.topbar-brand {
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+.topbar-label {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-right: 0.35rem;
+}
+.line-mode-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.tui-topbar select,
+.tui-topbar button {
+  background: var(--app-bg);
+  color: var(--app-fg);
+  border: 1px solid var(--muted);
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  font: inherit;
+}
+.hint-bar {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.terminal {
+  border: 1px solid var(--muted);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+}
+.paste-overlay {
+  border-bottom: 2px solid var(--overlay-border);
+  padding: 0.5rem 0.75rem;
+  background: #151820;
+}
+.paste-overlay.hidden {
+  display: none;
+}
+.paste-title,
+.paste-hint {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.prompt-stack {
+  background: #12141a;
+}
+.context-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 2rem;
+  border-bottom: 1px solid #1e222c;
+}
+.gutter-spacer {
+  width: var(--gutter-w);
+  flex-shrink: 0;
+}
+.prompt-row {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+.gutter {
+  width: var(--gutter-w);
+  background: var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.gutter-mark {
+  color: var(--fg);
+  background: transparent;
+  border: none;
+  font: inherit;
+  font-weight: 700;
+  cursor: default;
+  padding: 0;
+  letter-spacing: 0;
+}
+.gutter-mark.has-help {
+  color: #9cf;
+  cursor: pointer;
+}
+.gutter {
+  min-width: var(--gutter-w);
+  width: auto;
+  padding: 0 0.25rem;
+}
+.tokens {
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.35rem 0.5rem;
+  flex-wrap: wrap;
+  flex: 1;
+  align-items: center;
+}
+.token {
+  padding: 0.15rem 0.45rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.token.app {
+  background: var(--app-bg);
+  color: var(--app-fg);
+}
+.token.host {
+  background: var(--host-bg);
+  color: var(--host-fg);
+}
+.token.focused {
+  outline: 2px solid var(--focus-ring);
+}
+.prompt-input {
+  padding: 0.35rem 0.5rem;
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+  flex: 1;
+  min-width: 12rem;
+}
+.input-field {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--fg);
+  font: inherit;
+  outline: none;
+  min-width: 8rem;
+}
+.input-mock {
+  color: var(--focus-ring);
+}
+.hidden {
+  display: none !important;
+}
+.output {
+  padding: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  border-top: 1px solid #222;
+}
+.mode-1line .tokens {
+  flex: 0 1 auto;
+}
+
+.scrollback { border-bottom: 1px solid #222; }
+.history-entry { opacity: 0.9; }
+.history-entry .committed { color: var(--muted); }
+.gutter-empty { background: var(--gutter); }
+.live .gutter-mark { color: var(--fg); }
+
+.host-frame {
+  border: 1px solid #4a6a8a;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #1a2230;
+}
+.host-title {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  background: #243044;
+  color: var(--host-fg);
+}
+.host-muted { color: var(--muted); font-weight: 400; }
+.host-native {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  margin-bottom: 0;
+  background: #1e2838;
+  border-color: #3a5070;
+}
+.terminal-pane .terminal {
+  border-radius: 0;
+  border: none;
+  border-top: 1px solid #333;
+}
+.overlay-sim {
+  border: 1px dashed var(--overlay-border);
+  background: #151820;
+}
+.sim-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #000;
+  background: #f0a020;
+  padding: 0.1rem 0.35rem;
+  border-radius: 2px;
+}
+.placement-banner {
+  font-size: 0.7rem;
+  color: var(--muted);
+  padding: 0.35rem 0.75rem;
+  border-bottom: 1px solid #222;
+  background: #10141c;
+}
+.chrome-overlay .tui-topbar.overlay-sim {
+  margin-bottom: 0;
+  border-radius: 4px 4px 0 0;
+}
+.chrome-overlay .terminal {
+  border-top: none;
+}
