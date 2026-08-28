@@ -1,5 +1,11 @@
 = Changelog
 
+== 2026-08-28 -- Layout mode demos
+
+* Hash routes: `#/standalone`, `#/decoupled`, `#/manager`, `#/zones`, `#/association` (prompt desk remains `#/prompt`).
+* Interactive mocks for Open Terminal layout modes + DevCentr grid highlight/dull + nested zones + association.
+* Screenshots under `screenshots/` used by shell-architecture / HCI docs.
+
 == 2026-08-28 — Typography
 
 * Prompt/cell mock font stack: Consolas → Cascadia Mono → Courier New → monospace (Open Shell curated default).

@@ -4,6 +4,37 @@
 link:https://hci-nerdz.github.io/docs/hci-nerdz/shell-context-chrome.html[Shell context chrome] ?
 link:https://openshellorg.github.io/docs/shell-architecture/persistent-shell-context.html[Persistent shell context @ OpenShellOrg]
 
+
+== Layout demos (2026-08-28)
+
+Live: link:https://hci-nerdz.github.io/shell-context-demo/[hci-nerdz.github.io/shell-context-demo]
+
+[cols="1,2",options="header"]
+|===
+| Route | What it shows
+
+| `#/prompt`
+| Existing shell context chrome desk
+
+| `#/standalone`
+| Top / vertical tabs + shared surface
+
+| `#/decoupled`
+| Index chrome + separate session windows
+
+| `#/manager`
+| projectGroupedManager + DevCentr grid highlight/dull
+
+| `#/zones`
+| Contained tiling / nested zones (faded empty)
+
+| `#/association`
+| Subscriber + session registration mock
+|===
+
+Canon: link:https://github.com/openshellorg/shell-architecture[shell-architecture],
+link:https://github.com/HCI-Nerdz/docs/blob/main/docs/modules/ROOT/pages/contained-tiling.adoc[contained-tiling].
+
 == Run locally
 
 [source,bash]
