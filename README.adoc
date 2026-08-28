@@ -24,14 +24,14 @@ Opens http://localhost:5175/ (Vite dev server).
 
 == Deploy
 
-Target: link:https://hci-nerdz.github.io/demos/shell-context/[hci-nerdz.github.io/demos/shell-context/]
+Intended in-site URL: link:https://hci-nerdz.github.io/demos/shell-context/[hci-nerdz.github.io/demos/shell-context/]
 
 [source,bash]
 ----
 pnpm build
 ----
 
-Publish `dist/` via HCI-Nerdz.github.io or org Pages workflow (manual setup).
+Pages is not live yet. Sibling *repo* Pages (context-rails) uses Actions to publish `dist/` at `https://hci-nerdz.github.io/<repo>/`. The org site `/demos/` index is a separate Astro catalog (not a one-file copy) — add a card there in a later pass. This repo still needs `vite` `base` for a project Pages path, then a deploy workflow like context-rails.
 
 == Architecture
 
