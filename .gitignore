@@ -15,3 +15,7 @@ dist/
 !src/**
 !.github/
 !.github/**
+
+!screenshots/
+!screenshots/*.png
+
