@@ -20,6 +20,12 @@ const SUITE_LEDE =
   "a project manager beside a DevCentr grid, contained tiling zones, or session re-association. " +
   "These are desk mocks — not a real OS window manager.";
 
+
+/** Single intro memory-hook (not a gallery) — served from public/. */
+const INTRO_ANCHOR_SRC = `${import.meta.env.BASE_URL}intro-anchor.png`;
+const INTRO_ANCHOR_ALT =
+  "Open Shell facsimile window: host chrome with gcloud/user/host/path context tokens above the command line";
+
 interface RouteMeta {
   id: DemoRoute;
   label: string;
@@ -98,7 +104,7 @@ function routeMeta(id: DemoRoute): RouteMeta {
  * Chrome order:
  * 1. Identity strip: org / repo
  * 2. VCS / GitHub logo → repo
- * 3. Suite (demo) description
+ * 3. Suite (demo) description + one anchoring screenshot/mockup
  * 4. Variant switcher
  * 5. Variant title + description (UI body follows in wrapDemo)
  */
@@ -119,6 +125,9 @@ export function hubHtml(active: DemoRoute): string {
     <a class="vcs-link" href="${REPO_URL}" title="GitHub repository" aria-label="GitHub: ${REPO_LABEL}">${GITHUB_MARK}<span class="vcs-label">GitHub</span></a>
   </p>
   <p class="demo-suite-lede">${SUITE_LEDE}</p>
+  <figure class="demo-intro-anchor">
+    <img src="${INTRO_ANCHOR_SRC}" width="1122" height="585" alt="${INTRO_ANCHOR_ALT}" loading="eager" decoding="async" />
+  </figure>
   <div class="demo-variants" role="navigation" aria-label="Layout variants">${links}</div>
   <h1 class="demo-hub-title">${meta.title}</h1>
   <p class="demo-variant-lede">${meta.blurb}</p>

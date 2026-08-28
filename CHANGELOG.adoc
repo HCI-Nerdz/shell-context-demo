@@ -1,5 +1,10 @@
 = Changelog
 
+== 2026-08-28 -- Intro anchor mockup
+
+* Suite lede includes exactly one anchoring Open Shell facsimile screenshot (`public/intro-anchor.png`, mirrored under `screenshots/`) before the variant switcher.
+* Captured from `tools/intro-mock.html` (Consolas stack + host-chrome context tokens) for a single memory-hook before the interactive desks.
+
 == 2026-08-28 -- Facsimile windowing + hub chrome
 
 * Hub chrome: org/repo identity strip, GitHub VCS line, suite lede, variant switcher, per-variant title + lay blurb.
@@ -14,11 +19,11 @@
 * Interactive mocks for Open Terminal layout modes + DevCentr grid highlight/dull + nested zones + association.
 * Screenshots under `screenshots/` used by shell-architecture / HCI docs.
 
-== 2026-08-28 — Typography
+== 2026-08-28 -- Typography
 
-* Prompt/cell mock font stack: Consolas → Cascadia Mono → Courier New → monospace (Open Shell curated default).
+* Prompt/cell mock font stack: Consolas to Cascadia Mono to Courier New to monospace (Open Shell curated default).
 
-== 2026-08-28 — GitHub Pages
+== 2026-08-28 -- GitHub Pages
 
 * Actions workflow publishes `dist/` to project Pages at `/shell-context-demo/`
 * Vite `base` matches that slug; org-site `/demos/shell-context/` catalog card is still later

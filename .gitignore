@@ -19,3 +19,8 @@ dist/
 !screenshots/
 !screenshots/*.png
 
+!public/
+!public/**
+
+!tools/
+!tools/**

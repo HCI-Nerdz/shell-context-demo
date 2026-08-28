@@ -290,6 +290,19 @@ body {
   line-height: 1.5;
   color: #b4bac8;
 }
+/* One suite-level memory-hook before the interactive variants (not a gallery). */
+.demo-intro-anchor {
+  margin: 0 0 1rem;
+  max-width: min(42rem, 100%);
+}
+.demo-intro-anchor img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #2c3344;
+  background: #0a0c10;
+}
 .demo-variants {
   display: flex;
   flex-wrap: wrap;

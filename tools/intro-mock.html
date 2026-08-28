@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Intro anchor mock</title>
+  <style>
+    :root { font-family: "Consolas", "Cascadia Mono", "Courier New", monospace; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      background: #0a0c10; color: #e6e8ef; padding: 2rem;
+    }
+    .stage { width: min(920px, 100%); }
+    .os-window {
+      background: #12151c; border: 1px solid #3a4660; border-radius: 8px;
+      box-shadow: 0 24px 64px rgba(0,0,0,.55), 0 0 0 1px rgba(90,120,160,.12);
+      overflow: hidden;
+    }
+    .titlebar {
+      display: flex; align-items: center; gap: .65rem; padding: .55rem .85rem;
+      background: linear-gradient(180deg, #1c2230 0%, #151a24 100%); border-bottom: 1px solid #2a3144;
+    }
+    .traffic { display: flex; gap: .35rem; }
+    .traffic span { width: 10px; height: 10px; border-radius: 50%; display: block; }
+    .traffic .r { background: #c45c5c; } .traffic .y { background: #c4a35c; } .traffic .g { background: #5ca46a; }
+    .titlebar-label { flex: 1; font-size: .78rem; color: #a8b0c0; }
+    .topbar {
+      display: flex; flex-wrap: wrap; align-items: center; gap: .65rem;
+      padding: .55rem .85rem; background: #151820; border-bottom: 1px solid #2a3144;
+    }
+    .brand { font-weight: 700; color: #e8eef6; }
+    .sim {
+      font-size: .65rem; font-weight: 700; letter-spacing: .04em; color: #000;
+      background: #f0a020; padding: .1rem .35rem; border-radius: 2px;
+    }
+    .chip {
+      font-size: .72rem; color: #b8c0d0; background: #1e2430; border: 1px solid #3a4254;
+      border-radius: 3px; padding: .22rem .5rem;
+    }
+    .terminal { background: #0f1117; padding: .85rem .75rem 1rem; min-height: 280px; }
+    .hint { font-size: .72rem; color: #6e7688; margin: 0 0 .75rem .35rem; }
+    .block { margin-bottom: .85rem; }
+    .context { display: flex; flex-wrap: wrap; gap: .35rem; margin: 0 0 .35rem 2rem; }
+    .token {
+      font-size: .8rem; background: #1a3a5c; color: #b8d4f0; border: 1px solid #2a5a8c;
+      border-radius: 3px; padding: .15rem .45rem; white-space: nowrap;
+    }
+    .token.muted { background: #2a2d35; color: #c8ccd4; border-color: #444850; }
+    .row { display: flex; align-items: baseline; gap: .35rem; }
+    .gutter { width: 1.75rem; text-align: right; color: #f0a020; flex-shrink: 0; font-size: .9rem; }
+    .cmd {
+      color: #e6e8ef; font-size: .9rem; background: #161b24; border-radius: 2px;
+      padding: .12rem .4rem; flex: 1;
+    }
+    .cmd.live { background: transparent; padding-left: 0; }
+    .footer {
+      display: flex; justify-content: space-between; gap: 1rem; padding: .4rem .85rem;
+      background: #10141c; border-top: 1px solid #222833; font-size: .7rem; color: #7a8498;
+    }
+  </style>
+</head>
+<body>
+  <div class="stage" id="capture">
+    <div class="os-window">
+      <div class="titlebar">
+        <div class="traffic" aria-hidden="true"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+        <div class="titlebar-label">Open Shell · desk · ~/code/shell-architecture</div>
+      </div>
+      <div class="topbar">
+        <span class="brand">Open Shell</span>
+        <span class="sim">SIM</span>
+        <span class="chip">Host chrome</span>
+        <span class="chip">2-line</span>
+        <span class="chip">ephemeral</span>
+        <span class="chip">Theme: Blue / grey</span>
+      </div>
+      <div class="terminal">
+        <p class="hint">SIM: negotiation accepted — context bar in native host chrome (outside terminal pane)</p>
+        <div class="block">
+          <div class="context">
+            <span class="token">gcloud: ftn</span>
+            <span class="token muted">user: rjamd</span>
+            <span class="token muted">host: desk</span>
+            <span class="token">path: ~/code</span>
+          </div>
+          <div class="row">
+            <span class="gutter" aria-hidden="true"></span>
+            <span class="cmd">gcloud config get-value project</span>
+          </div>
+        </div>
+        <div class="block">
+          <div class="context">
+            <span class="token">gcloud: ftn</span>
+            <span class="token muted">user: rjamd</span>
+            <span class="token muted">host: desk</span>
+            <span class="token">path: ~/code</span>
+          </div>
+          <div class="row">
+            <span class="gutter">&gt;</span>
+            <span class="cmd live">gcloud compute instances list</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <span>chrome=host · line=2-line · arrow=ephemeral</span>
+        <span>shell-context · facsimile</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
