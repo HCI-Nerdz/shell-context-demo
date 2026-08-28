@@ -1,3 +1,42 @@
 = shell-context-demo
+:description: Web mockup ? shell context chrome (tokens, left-arrow focus, paste preview, themes).
 
-pnpm install && pnpm dev
+link:https://hci-nerdz.github.io/docs/hci-nerdz/shell-context-chrome.html[Shell context chrome] ?
+link:https://openshellorg.github.io/docs/shell-architecture/persistent-shell-context.html[Persistent shell context @ OpenShellOrg]
+
+== Run locally
+
+[source,bash]
+----
+pnpm install
+pnpm dev
+----
+
+Opens http://localhost:5175/ (Vite dev server).
+
+== Demo controls
+
+* **Left-arrow** ? cycle token focus (path ? user ? host ? app tokens)
+* **Right-arrow / Enter** ? return toward input
+* **PgUp / PgDn** ? scroll paste preview (5 visible lines)
+* **Theme** button ? blue/grey default vs high-contrast
+* **?** gutter ? static prohelp placeholder (no backend)
+
+== Deploy
+
+Target: link:https://hci-nerdz.github.io/demos/shell-context/[hci-nerdz.github.io/demos/shell-context/]
+
+[source,bash]
+----
+pnpm build
+----
+
+Publish `dist/` via HCI-Nerdz.github.io or org Pages workflow (manual setup).
+
+== Architecture
+
+`src/core/` ? `src/controller/` ? `src/render/` ? see HCI Nerdz prototype-strategy.
+
+== License
+
+MIT ? see link:LICENSE[LICENSE].
