@@ -1,0 +1,15 @@
+node_modules/
+dist/
+*
+!.gitignore
+!LICENSE
+!README.adoc
+!CHANGELOG.adoc
+!AGENTS.md
+!package.json
+!pnpm-lock.yaml
+!vite.config.ts
+!tsconfig.json
+!index.html
+!src/
+!src/**

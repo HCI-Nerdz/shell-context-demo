@@ -1,0 +1,1 @@
+import type{ThemeId}from"../core/types";export const THEMES:Record<ThemeId,{label:string;rootClass:string}>={default:{label:"Blue / grey",rootClass:"theme-default"},"high-contrast":{label:"High contrast",rootClass:"theme-high-contrast"}};export function nextTheme(c:ThemeId):ThemeId{return c==="default"?"high-contrast":"default"}

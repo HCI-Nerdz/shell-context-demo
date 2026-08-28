@@ -1,0 +1,1 @@
+export type ContextKind="enum"|"string"|"path"|"secret";export interface ContextToken{id:string;label:string;value:string;zone:"app"|"host";kind?:ContextKind};export type ThemeId="default"|"high-contrast";export interface PasteBlock{lines:string[];visibleStart:number}
