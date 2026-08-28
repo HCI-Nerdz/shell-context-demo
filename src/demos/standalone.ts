@@ -41,7 +41,7 @@ export function renderStandalone(state: StandaloneState): string {
     <div class="ot-tabstrip" role="tablist">${tabs}</div>
     <div class="ot-session" role="tabpanel"><pre class="ot-cells">${escape(body)}</pre></div>
   </div>
-  <p class="ot-caption">Standalone: tabs + PTY surface share one OS window (WT-like).</p>
+  <p class="ot-caption">Toggle top vs vertical tabs; surface stays in the same facsimile window.</p>
 </div>`,
   );
 }

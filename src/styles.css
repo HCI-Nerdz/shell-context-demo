@@ -255,22 +255,48 @@ body {
   margin: 0 auto;
   padding: 1rem 1.25rem 0.5rem;
 }
-.demo-hub-brand {
+
+
+.demo-vcs { margin: 0 0 0.55rem; }
+.vcs-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #c5c9d4;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+.vcs-link:hover { color: #e6e8ef; }
+.vcs-mark { display: block; }
+.demo-identity {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.4rem;
   font-size: 0.85rem;
   color: #c5c9d4;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.65rem;
 }
+.demo-identity a {
+  color: #c5c9d4;
+  text-decoration: none;
+}
+.demo-identity a:hover { color: #e6e8ef; text-decoration: underline; }
 .demo-hub-sep { color: var(--muted); }
-.demo-nav {
+.demo-suite-lede {
+  margin: 0 0 0.85rem;
+  max-width: 46rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #b4bac8;
+}
+.demo-variants {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
-.demo-nav-link {
+.demo-variant-link {
   color: #c8ccd4;
   text-decoration: none;
   font-size: 0.8rem;
@@ -279,16 +305,24 @@ body {
   border-radius: 3px;
   background: #151820;
 }
-.demo-nav-link:hover { border-color: #6a7a94; }
-.demo-nav-link.active {
+.demo-variant-link:hover { border-color: #6a7a94; }
+.demo-variant-link.active {
   background: #243044;
   border-color: #7a9ab8;
   color: #e8eef6;
 }
 .demo-hub-title {
-  margin: 0.35rem 0 0.75rem;
-  font-size: 1.05rem;
+  margin: 0.15rem 0 0.4rem;
+  font-size: 1.15rem;
   color: #e6e8ef;
+  font-weight: 600;
+}
+.demo-variant-lede {
+  margin: 0 0 0.85rem;
+  max-width: 46rem;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #a8b0c0;
 }
 .demo-stage {
   max-width: 1100px;
@@ -576,4 +610,101 @@ body {
   border-radius: 6px;
   padding: 0.75rem;
   background: #121820;
+}
+
+/* ---- Faux OS windows on facsimile desks ---- */
+.ot-faux-desk {
+  position: relative;
+  min-height: 420px;
+  background:
+    linear-gradient(180deg, #0e1218 0%, #121820 100%);
+  border: 1px solid #2c3344;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.ot-zone-desk.ot-faux-desk,
+.ot-session-desk.ot-faux-desk {
+  display: block;
+  grid-template-columns: unset;
+}
+.ot-faux-win {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #3a455c;
+  border-radius: 6px;
+  background: #1a2230;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  opacity: 0.72;
+  transition: opacity 0.12s ease, border-color 0.12s ease;
+}
+.ot-faux-win.focused {
+  opacity: 1;
+  border-color: #7a9ab8;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+}
+.ot-faux-win.faded { opacity: 0.45; border-style: dashed; }
+.ot-win-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.3rem 0.45rem 0.3rem 0.65rem;
+  background: #243044;
+  color: var(--host-fg);
+  font-size: 0.75rem;
+  cursor: grab;
+  user-select: none;
+  flex-shrink: 0;
+}
+.ot-win-titlebar:active { cursor: grabbing; }
+.ot-win-title-text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ot-win-badge {
+  margin-left: 0.35rem;
+  color: var(--muted);
+  font-size: 0.68rem;
+}
+.ot-win-actions { display: inline-flex; gap: 0.2rem; flex-shrink: 0; }
+.ot-win-btn {
+  width: 1.35rem;
+  height: 1.2rem;
+  padding: 0;
+  border: 1px solid #3a455c;
+  border-radius: 2px;
+  background: #1a2230;
+  color: #c8ccd4;
+  font: inherit;
+  font-size: 0.7rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.ot-win-btn:hover { background: #2a3348; }
+.ot-win-close:hover { background: #5a2a2a; border-color: #a05050; color: #fff; }
+.ot-win-resize {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  cursor: se-resize;
+  background:
+    linear-gradient(135deg, transparent 50%, #5a6a80 50%);
+  opacity: 0.7;
+}
+.ot-chip.danger {
+  border-color: #8a4040;
+  color: #f0c0c0;
+}
+.ot-chip.danger:hover { background: #3a2020; }
+.ot-zone.ot-faux-win { min-height: 0; }
+.ot-zone-grid { flex: 1; min-height: 0; }
+.ot-index-window.ot-faux-win,
+.ot-os-window.ot-faux-win {
+  margin: 0;
+  opacity: 0.72;
+}
+.ot-os-window.ot-faux-win .ot-cells {
+  padding: 0.55rem 0.65rem;
+  flex: 1;
 }

@@ -1,5 +1,13 @@
 = Changelog
 
+== 2026-08-28 -- Facsimile windowing + hub chrome
+
+* Hub chrome: org/repo identity strip, GitHub VCS line, suite lede, variant switcher, per-variant title + lay blurb.
+* Zones: delete zone (toolbar + title-bar close), minimize, drag, resize, z-order focus on facsimile desk.
+* Decoupled: faux windows with drag / focus / min / close / resize.
+* README advisory: facsimile desks vs real OS windowing.
+* UTF-8 sources (nav/windowing).
+
 == 2026-08-28 -- Layout mode demos
 
 * Hash routes: `#/standalone`, `#/decoupled`, `#/manager`, `#/zones`, `#/association` (prompt desk remains `#/prompt`).

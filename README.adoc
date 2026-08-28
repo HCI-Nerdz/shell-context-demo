@@ -1,7 +1,7 @@
 = shell-context-demo
-:description: Web mockup ? shell context chrome (tokens, left-arrow focus, paste preview, themes).
+:description: Web mockup — shell context chrome and Open Terminal layout mode facsimiles.
 
-link:https://hci-nerdz.github.io/docs/hci-nerdz/shell-context-chrome.html[Shell context chrome] ?
+link:https://hci-nerdz.github.io/docs/hci-nerdz/shell-context-chrome.html[Shell context chrome] —
 link:https://openshellorg.github.io/docs/shell-architecture/persistent-shell-context.html[Persistent shell context @ OpenShellOrg]
 
 
@@ -9,24 +9,26 @@ link:https://openshellorg.github.io/docs/shell-architecture/persistent-shell-con
 
 Live: link:https://hci-nerdz.github.io/shell-context-demo/[hci-nerdz.github.io/shell-context-demo]
 
+Org demos index: link:https://hci-nerdz.github.io/demos/[hci-nerdz.github.io/demos/]
+
 [cols="1,2",options="header"]
 |===
 | Route | What it shows
 
 | `#/prompt`
-| Existing shell context chrome desk
+| Shell context chrome desk (tokens, paste preview, themes)
 
 | `#/standalone`
 | Top / vertical tabs + shared surface
 
 | `#/decoupled`
-| Index chrome + separate session windows
+| Index chrome + separate facsimile session windows
 
 | `#/manager`
 | projectGroupedManager + DevCentr grid highlight/dull
 
 | `#/zones`
-| Contained tiling / nested zones (faded empty)
+| Contained tiling / nested zones (spawn, delete, drag, minimize)
 
 | `#/association`
 | Subscriber + session registration mock
@@ -34,6 +36,23 @@ Live: link:https://hci-nerdz.github.io/shell-context-demo/[hci-nerdz.github.io/s
 
 Canon: link:https://github.com/openshellorg/shell-architecture[shell-architecture],
 link:https://github.com/HCI-Nerdz/docs/blob/main/docs/modules/ROOT/pages/contained-tiling.adoc[contained-tiling].
+
+== Facsimile desks vs real windowing (advisory)
+
+*What is fine in a marketing / explainer demo*
+
+* Faux windows with title bars, close/minimize, drag, z-order focus, and simple resize on a **fixed desk canvas** inside the page.
+* Showing layout *ideas*: decoupled index vs standalone, contained tiling zones, project-grouped manager beside a grid.
+
+*What is painful (avoid pretending you shipped it)*
+
+* True multi-monitor placement and drag across browser chrome.
+* OS taskbar / HWND identity, real window piping, and anything that must leave the browser sandbox.
+* Pixel-perfect “this is your desktop” claims — browsers will fight you.
+
+*Recommendation*
+
+Keep these Pages demos as **facsimile desks**. Real windowing stays in open-terminal / dew (native host). Do not grow the web mock into a fake OS WM.
 
 == Run locally
 
@@ -45,24 +64,22 @@ pnpm dev
 
 Opens http://localhost:5175/ (Vite dev server).
 
-== Demo controls
+== Demo controls (prompt desk)
 
-* **Left-arrow** ? cycle token focus (path ? user ? host ? app tokens)
-* **Right-arrow / Enter** ? return toward input
-* **PgUp / PgDn** ? scroll paste preview (5 visible lines)
-* **Theme** button ? blue/grey default vs high-contrast
-* **?** gutter ? static prohelp placeholder (no backend)
+* **Left-arrow** — cycle token focus (path → user → host → app tokens)
+* **Right-arrow / Enter** — return toward input
+* **PgUp / PgDn** — scroll paste preview (5 visible lines)
+* **Theme** button — blue/grey default vs high-contrast
+* **?** gutter — static prohelp placeholder (no backend)
 
 == Deploy
 
-Live *repo* Pages (this repo’s Actions workflow publishes `dist/`):
+Live *repo* Pages (this repo's Actions workflow publishes `dist/`):
 link:https://hci-nerdz.github.io/shell-context-demo/[https://hci-nerdz.github.io/shell-context-demo/]
 
 Vite `base` is `/shell-context-demo/` so assets resolve under that project slug.
 
-Later: a catalog card on the org site at
-link:https://hci-nerdz.github.io/demos/shell-context/[hci-nerdz.github.io/demos/shell-context/]
-(HCI-Nerdz.github.io Astro — not wired in this pass).
+Catalog card: link:https://hci-nerdz.github.io/demos/[HCI-Nerdz demos index] (spatial windowing category).
 
 [source,bash]
 ----
@@ -82,7 +99,7 @@ font-family: "Consolas", "Cascadia Mono", "Courier New", monospace;
 
 == Architecture
 
-`src/core/` ? `src/controller/` ? `src/render/` ? see HCI Nerdz prototype-strategy.
+`src/core/` → `src/controller/` → `src/render/` → see HCI Nerdz prototype-strategy.
 
 == Changelog
 
@@ -90,4 +107,4 @@ See link:CHANGELOG.adoc[CHANGELOG.adoc].
 
 == License
 
-MIT ? see link:LICENSE[LICENSE].
+MIT — see link:LICENSE[LICENSE].
