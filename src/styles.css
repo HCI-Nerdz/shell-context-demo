@@ -10,7 +10,7 @@
   --overlay-border: #5a9bb0;
   --muted: #888;
   --gutter-w: 2rem;
-  font-family: Consolas, "Cascadia Mono", monospace;
+  font-family: "Consolas", "Cascadia Mono", "Courier New", monospace;
 }
 .theme-high-contrast {
   --bg: #000;

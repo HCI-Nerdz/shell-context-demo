@@ -38,6 +38,17 @@ link:https://hci-nerdz.github.io/demos/shell-context/[hci-nerdz.github.io/demos/
 pnpm build
 ----
 
+== Typography
+
+Prompt/cell mock uses the Open Shell curated monospace stack (system fonts only — no bundled faces):
+
+[source,css]
+----
+font-family: "Consolas", "Cascadia Mono", "Courier New", monospace;
+----
+
+**Consolas** is the shipping default to fit OSO chrome visual language; users may override later in the real shell. Spec: link:https://openshellorg.github.io/docs/shell-architecture/typography.html[typography @ shell-architecture].
+
 == Architecture
 
 `src/core/` ? `src/controller/` ? `src/render/` ? see HCI Nerdz prototype-strategy.

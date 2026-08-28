@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-08-28 — Typography
+
+* Prompt/cell mock font stack: Consolas → Cascadia Mono → Courier New → monospace (Open Shell curated default).
+
 == 2026-08-28 — GitHub Pages
 
 * Actions workflow publishes `dist/` to project Pages at `/shell-context-demo/`
