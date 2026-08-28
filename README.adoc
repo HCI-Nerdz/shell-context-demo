@@ -24,18 +24,27 @@ Opens http://localhost:5175/ (Vite dev server).
 
 == Deploy
 
-Intended in-site URL: link:https://hci-nerdz.github.io/demos/shell-context/[hci-nerdz.github.io/demos/shell-context/]
+Live *repo* Pages (this repo’s Actions workflow publishes `dist/`):
+link:https://hci-nerdz.github.io/shell-context-demo/[https://hci-nerdz.github.io/shell-context-demo/]
+
+Vite `base` is `/shell-context-demo/` so assets resolve under that project slug.
+
+Later: a catalog card on the org site at
+link:https://hci-nerdz.github.io/demos/shell-context/[hci-nerdz.github.io/demos/shell-context/]
+(HCI-Nerdz.github.io Astro — not wired in this pass).
 
 [source,bash]
 ----
 pnpm build
 ----
 
-Pages is not live yet. Sibling *repo* Pages (context-rails) uses Actions to publish `dist/` at `https://hci-nerdz.github.io/<repo>/`. The org site `/demos/` index is a separate Astro catalog (not a one-file copy) — add a card there in a later pass. This repo still needs `vite` `base` for a project Pages path, then a deploy workflow like context-rails.
-
 == Architecture
 
 `src/core/` ? `src/controller/` ? `src/render/` ? see HCI Nerdz prototype-strategy.
+
+== Changelog
+
+See link:CHANGELOG.adoc[CHANGELOG.adoc].
 
 == License
 

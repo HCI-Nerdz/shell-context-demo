@@ -1,5 +1,10 @@
 = Changelog
 
+== 2026-08-28 — GitHub Pages
+
+* Actions workflow publishes `dist/` to project Pages at `/shell-context-demo/`
+* Vite `base` matches that slug; org-site `/demos/shell-context/` catalog card is still later
+
 == 2026-08-28
 
 * Wave 1 scaffold.
