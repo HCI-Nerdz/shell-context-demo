@@ -1,5 +1,10 @@
 = Changelog
 
+== 2026-08-30 — Identity strip is site nav only
+
+* Hub breadcrumb `HCI-Nerdz / shell-context-demo`: org → demos index, repo → this demo's site home (not GitHub).
+* GitHub remains only on the VCS logo line under the strip.
+
 == 2026-08-30 — OpenShellOrg links use opensh.org
 
 * README OpenShellOrg docs links use https://opensh.org/ instead of openshellorg.github.io.

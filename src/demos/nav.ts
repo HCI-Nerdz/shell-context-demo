@@ -9,6 +9,8 @@ export type DemoRoute =
   | "association";
 
 const DEMOS_INDEX = "https://hci-nerdz.github.io/demos/";
+/** Site home for this demo (Pages / suite root) — identity strip is site nav only. */
+const SITE_HOME = import.meta.env.BASE_URL;
 const REPO_URL = "https://github.com/HCI-Nerdz/shell-context-demo";
 const ORG_LABEL = "HCI-Nerdz";
 const REPO_LABEL = "shell-context-demo";
@@ -102,8 +104,8 @@ function routeMeta(id: DemoRoute): RouteMeta {
 
 /**
  * Chrome order:
- * 1. Identity strip: org / repo
- * 2. VCS / GitHub logo → repo
+ * 1. Identity strip: org / repo (site nav only — repo → demo site home)
+ * 2. VCS / GitHub logo → repo (only VCS link)
  * 3. Suite (demo) description + one anchoring screenshot/mockup
  * 4. Variant switcher
  * 5. Variant title + description (UI body follows in wrapDemo)
@@ -118,7 +120,7 @@ export function hubHtml(active: DemoRoute): string {
   <p class="demo-identity">
     <a href="${DEMOS_INDEX}">${ORG_LABEL}</a>
     <span class="demo-hub-sep" aria-hidden="true">/</span>
-    <a href="${REPO_URL}">${REPO_LABEL}</a>
+    <a href="${SITE_HOME}">${REPO_LABEL}</a>
     <span class="sim-badge" title="Interactive mock">DEMO</span>
   </p>
   <p class="demo-vcs">
