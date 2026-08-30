@@ -2,7 +2,7 @@
 :description: Web mockup — shell context chrome and Open Terminal layout mode facsimiles.
 
 link:https://hci-nerdz.github.io/docs/hci-nerdz/shell-context-chrome.html[Shell context chrome] —
-link:https://openshellorg.github.io/docs/shell-architecture/persistent-shell-context.html[Persistent shell context @ OpenShellOrg]
+link:https://opensh.org/docs/shell-architecture/persistent-shell-context.html[Persistent shell context @ OpenShellOrg]
 
 
 == Layout demos (2026-08-28)
@@ -95,7 +95,7 @@ Prompt/cell mock uses the Open Shell curated monospace stack (system fonts only 
 font-family: "Consolas", "Cascadia Mono", "Courier New", monospace;
 ----
 
-**Consolas** is the shipping default to fit OSO chrome visual language; users may override later in the real shell. Spec: link:https://openshellorg.github.io/docs/shell-architecture/typography.html[typography @ shell-architecture].
+**Consolas** is the shipping default to fit OSO chrome visual language; users may override later in the real shell. Spec: link:https://opensh.org/docs/shell-architecture/typography.html[typography @ shell-architecture].
 
 == Architecture
 

@@ -1,5 +1,9 @@
 = Changelog
 
+== 2026-08-30 — OpenShellOrg links use opensh.org
+
+* README OpenShellOrg docs links use https://opensh.org/ instead of openshellorg.github.io.
+
 == 2026-08-28 -- Intro anchor mockup
 
 * Suite lede includes exactly one anchoring Open Shell facsimile screenshot (`public/intro-anchor.png`, mirrored under `screenshots/`) before the variant switcher.
