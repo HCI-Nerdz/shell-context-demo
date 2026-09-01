@@ -1,3 +1,4 @@
+import { demoHarness, facsimileDesk } from "./harness";
 import { wrapDemo } from "./nav";
 
 export interface ManagerState {
@@ -73,7 +74,7 @@ export function renderManager(state: ManagerState): string {
   const sess = state.projects.flatMap((p) => p.sessions).find((s) => s.id === state.activeSession);
   return wrapDemo(
     "manager",
-    `<div class="ot-panel manager-layout">
+    `${facsimileDesk(`<div class="ot-panel manager-layout">
   <div class="ot-mgr-window">
     <div class="ot-os-title">Open Terminal · Project manager</div>
     <div class="ot-mgr-body">
@@ -90,7 +91,7 @@ group: ${activeProj}
     <div class="dc-grid">${grid}</div>
     <p class="ot-caption">Highlight + dull (default). Click a grid cell or a vertical tab to swap focus.</p>
   </div>
-</div>`,
+</div>`)}`,
   );
 }
 

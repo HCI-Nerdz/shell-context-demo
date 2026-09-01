@@ -14,6 +14,8 @@ Spec: openshellorg/shell-architecture `prompt-spatial-layout.adoc`.
 
 Hash-route suite: **variant selector** (scoped separately) drives both a **static PNG mockup** (`public/mock/{variant}.png`, 1122×585) and the interactive desk. Captures from `tools/mocks/*.html` via `pnpm capture-mocks`. Anchoring images are non-interactive (`<img>` only).
 
+Interactive desks split **demo harness** (explainer controls, dashed strip, sans-serif) from **product facsimile** (`.facsimile-bezel`, product palette). Helpers: `src/demos/harness.ts`.
+
 ## Top-bar settings
 
 - **Line mode:** `1-line` | `2-line`

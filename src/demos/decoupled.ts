@@ -1,3 +1,4 @@
+import { demoHarness, facsimileDesk } from "./harness";
 import { wrapDemo } from "./nav";
 import {
   bindFauxWindows,
@@ -105,14 +106,9 @@ export function renderDecoupled(state: DecoupledState): string {
 
   return wrapDemo(
     "decoupled",
-    `<div class="ot-panel">
-  <div class="ot-toolbar">
-    <span class="ot-label">Facsimile desk</span>
-    ${restore}
-  </div>
-  <div class="ot-session-desk ot-faux-desk" aria-label="Decoupled session desk">${indexWin}${windows}</div>
-  <p class="ot-caption">Decoupled index: tabs/thumbs in the calling window; live sessions are separate facsimile windows. Drag, focus (z-order), minimize, close. Real OS HWNDs live in open-terminal / dew — not in this page.</p>
-</div>`,
+    `${demoHarness(`<span class="ot-label">Facsimile desk</span>${restore}`)}
+${facsimileDesk(`<div class="ot-session-desk ot-faux-desk" aria-label="Decoupled session desk">${indexWin}${windows}</div>`)}
+  <p class="ot-caption">Decoupled index: tabs/thumbs in the calling window; live sessions are separate facsimile windows. Drag, focus (z-order), minimize, close. Real OS HWNDs live in open-terminal / dew — not in this page.</p>`,
   );
 }
 

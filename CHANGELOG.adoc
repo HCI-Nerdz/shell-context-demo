@@ -1,5 +1,10 @@
 = Changelog
 
+== 2026-09-01 — Demo harness vs product facsimile
+
+* Explainer controls live in a labeled **Demo controls** harness strip (dashed border, sans-serif) outside `.facsimile-bezel`.
+* Product simulation stays inside the bezel with terminal/product palette; prompt desk splits chrome simulation/theme/paste (harness) from line/arrow settings (facsimile top bar).
+
 == 2026-09-01 — Static PNG mockups + scoped variant selector
 
 * Variant selector is visually separate from the anchoring mockup (tabs alter preview **and** desk, not “mockup chrome”).

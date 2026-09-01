@@ -1,3 +1,4 @@
+import { demoHarness, facsimileDesk } from "./harness";
 import { wrapDemo } from "./nav";
 
 export type TabSide = "top" | "left";
@@ -31,18 +32,14 @@ export function renderStandalone(state: StandaloneState): string {
   const sideClass = state.side === "left" ? "ot-standalone vertical" : "ot-standalone horizontal";
   return wrapDemo(
     "standalone",
-    `<div class="ot-panel">
-  <div class="ot-toolbar">
-    <span class="ot-label">Tab placement</span>
+    `${demoHarness(`<span class="ot-label">Tab placement</span>
     <button type="button" class="ot-chip${state.side === "top" ? " on" : ""}" data-side="top">Top tabs</button>
-    <button type="button" class="ot-chip${state.side === "left" ? " on" : ""}" data-side="left">Vertical tabs</button>
-  </div>
-  <div class="${sideClass}">
+    <button type="button" class="ot-chip${state.side === "left" ? " on" : ""}" data-side="left">Vertical tabs</button>`)}
+${facsimileDesk(`<div class="${sideClass}">
     <div class="ot-tabstrip" role="tablist">${tabs}</div>
     <div class="ot-session" role="tabpanel"><pre class="ot-cells">${escape(body)}</pre></div>
-  </div>
-  <p class="ot-caption">Toggle top vs vertical tabs; surface stays in the same facsimile window.</p>
-</div>`,
+  </div>`)}
+  <p class="ot-caption">Toggle top vs vertical tabs; surface stays in the same facsimile window.</p>`,
   );
 }
 

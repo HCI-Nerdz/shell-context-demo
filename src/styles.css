@@ -370,6 +370,61 @@ body {
 }
 .demo-stage .desk { max-width: none; padding: 0; }
 
+/* Demo harness (explainer controls) vs product facsimile — structure + palette split. */
+.demo-harness {
+  font-family: system-ui, "Segoe UI", sans-serif;
+  margin: 0 0 0.85rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px dashed #5a6478;
+  border-radius: 8px;
+  background: #10141c;
+}
+.demo-harness-label {
+  display: block;
+  margin: 0 0 0.45rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #8a949e;
+}
+.demo-harness-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+}
+.demo-harness .ot-label { color: #9aa3b4; }
+.demo-harness .ot-chip,
+.demo-harness select,
+.demo-harness button {
+  font-family: inherit;
+  font-size: 0.8rem;
+  background: #1c2230;
+  color: #d5dae6;
+  border: 1px solid #4a5568;
+  border-radius: 3px;
+  padding: 0.3rem 0.55rem;
+  cursor: pointer;
+}
+.demo-harness .ot-chip.on,
+.demo-harness .ot-chip:hover,
+.demo-harness button:hover { border-color: #7a9ab8; background: #243044; }
+.demo-harness .hint-bar { font-size: 0.72rem; color: #8a949e; }
+.demo-harness .topbar-label { font-size: 0.72rem; color: #9aa3b4; margin-right: 0.25rem; }
+.demo-harness .line-mode-switch { display: inline-flex; align-items: center; gap: 0.25rem; }
+.facsimile-desk {
+  margin: 0 0 0.75rem;
+}
+.facsimile-bezel {
+  border-radius: 10px;
+  padding: 0.55rem;
+  background: #080a0e;
+  border: 1px solid #3a4660;
+  box-shadow: inset 0 0 0 1px rgba(90, 120, 160, 0.1);
+  font-family: "Consolas", "Cascadia Mono", "Courier New", monospace;
+}
+
 .ot-panel {
   background: #12151c;
   border: 1px solid #2c3344;

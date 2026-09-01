@@ -1,3 +1,4 @@
+import { demoHarness, facsimileDesk } from "./harness";
 import { wrapDemo } from "./nav";
 import {
   bindFauxWindows,
@@ -103,18 +104,14 @@ export function renderZones(state: ZoneState): string {
 
   return wrapDemo(
     "zones",
-    `<div class="ot-panel">
-  <div class="ot-toolbar">
-    <span class="ot-label">Group (membership stable)</span>
+    `${demoHarness(`<span class="ot-label">Group (membership stable)</span>
     ${groups}
     <button type="button" class="ot-chip" data-action="spawn-zone">Spawn zone</button>
     <button type="button" class="ot-chip" data-action="register">Register group → empty zone</button>
     <button type="button" class="ot-chip danger" data-action="delete-focus" title="Delete focused zone">Delete zone</button>
-    ${closedHint}
-  </div>
-  <div class="ot-zone-desk ot-faux-desk" aria-label="Contained tiling desk">${zoneCards}</div>
-  <p class="ot-caption">Contained tiling: zones as facsimile windows inside the desk. Drag title bars, close/minimize, or Delete zone. Moving a display does not leave the group. Not a real multi-monitor WM.</p>
-</div>`,
+    ${closedHint}`)}
+${facsimileDesk(`<div class="ot-zone-desk ot-faux-desk" aria-label="Contained tiling desk">${zoneCards}</div>`)}
+  <p class="ot-caption">Contained tiling: zones as facsimile windows inside the desk. Drag title bars, close/minimize, or Delete zone. Moving a display does not leave the group. Not a real multi-monitor WM.</p>`,
   );
 }
 

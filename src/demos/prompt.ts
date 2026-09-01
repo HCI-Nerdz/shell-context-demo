@@ -11,6 +11,7 @@ import type {
 import { stepFocus, tokenFocusOrder } from "../controller/focus";
 import { PASTE_VISIBLE, scrollPaste, visibleLines } from "../controller/paste";
 import { nextTheme, THEMES } from "../render/themes";
+import { demoHarness, facsimileDesk } from "./harness";
 import { wrapDemo } from "./nav";
 
 const TRI = "\u25B6";
@@ -111,19 +112,27 @@ export function mountPromptDemo(app: HTMLDivElement): () => void {
 </div>`;
   }
 
-  function topBarInnerHtml(): string {
+  function harnessControlsHtml(): string {
     const copyImplication =
       arrowMode === "ephemeral" ? `${TRI} omitted from history/copy` : `${TRI} in history and copy`;
-    return `
-    <span class="topbar-brand">Open Shell</span>
-    <span class="sim-badge" title="Demo only">SIM</span>
-    <label class="line-mode-switch">
-      <span class="topbar-label">Chrome</span>
+    return demoHarness(
+      `<label class="line-mode-switch">
+      <span class="topbar-label">Chrome simulation</span>
       <select data-action="chrome-placement" aria-label="Simulate host chrome vs overlay">
         <option value="host"${chromePlacement === "host" ? " selected" : ""}>Host chrome</option>
         <option value="overlay"${chromePlacement === "overlay" ? " selected" : ""}>Overlay</option>
       </select>
     </label>
+    <button type="button" data-action="theme">Theme: ${THEMES[theme].label}</button>
+    <button type="button" data-action="paste-toggle">${pasteOpen ? "Hide" : "Show"} paste</button>
+    <span class="hint-bar">${copyImplication}</span>`,
+    );
+  }
+
+  function productTopBarHtml(): string {
+    return `
+    <span class="topbar-brand">Open Shell</span>
+    <span class="sim-badge" title="Demo only">SIM</span>
     <label class="line-mode-switch">
       <span class="topbar-label">Line mode</span>
       <select data-action="line-mode" aria-label="Prompt line mode">
@@ -137,10 +146,11 @@ export function mountPromptDemo(app: HTMLDivElement): () => void {
         <option value="ephemeral"${arrowMode === "ephemeral" ? " selected" : ""}>ephemeral</option>
         <option value="persist"${arrowMode === "persist" ? " selected" : ""}>persist</option>
       </select>
-    </label>
-    <button type="button" data-action="theme">Theme: ${THEMES[theme].label}</button>
-    <button type="button" data-action="paste-toggle">${pasteOpen ? "Hide" : "Show"} paste</button>
-    <span class="hint-bar">${copyImplication}</span>`;
+    </label>`;
+  }
+
+  function topBarInnerHtml(): string {
+    return productTopBarHtml();
   }
 
   function submitCommand(): void {
@@ -194,8 +204,7 @@ export function mountPromptDemo(app: HTMLDivElement): () => void {
       ? "SIM: negotiation accepted — bar in native host chrome (outside terminal pane)"
       : "SIM: negotiation rejected/unsupported — bar on display-overlay inside shell";
 
-    const body = `<div class="desk ${THEMES[theme].rootClass} chrome-${chromePlacement}">
-  ${
+    const facsimileInner = `${
     hostChrome
       ? `<div class="host-frame">
     <div class="host-title">OpenShellOrg terminal <span class="host-muted">(simulated host chrome)</span></div>
@@ -219,7 +228,11 @@ export function mountPromptDemo(app: HTMLDivElement): () => void {
     ${livePromptHtml()}
     <div class="output">chrome=<strong>${chromePlacement}</strong> · line=<strong>${lineMode}</strong> · arrow=<strong>${arrowMode}</strong></div>
   </div>
-  ${hostChrome ? `</div></div>` : ""}
+  ${hostChrome ? `</div></div>` : ""}`;
+
+    const body = `<div class="desk ${THEMES[theme].rootClass} chrome-${chromePlacement}">
+  ${harnessControlsHtml()}
+  ${facsimileDesk(facsimileInner)}
 </div>`;
 
     app.innerHTML = wrapDemo("prompt", body);
