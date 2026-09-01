@@ -23,67 +23,66 @@ const SUITE_LEDE =
   "These are desk mocks — not a real OS window manager.";
 
 
-/** Single intro memory-hook (not a gallery) — served from public/. */
-const INTRO_ANCHOR_SRC = `${import.meta.env.BASE_URL}intro-anchor.png`;
-const INTRO_ANCHOR_ALT =
-  "Open Shell facsimile window: host chrome with gcloud/user/host/path context tokens above the command line";
+import { variantMockHtml } from "./variant-mocks";
 
 interface RouteMeta {
   id: DemoRoute;
+  /** Tab label and section heading — keep identical (human-readable). */
   label: string;
-  title: string;
   blurb: string;
+  /** Short caption under the anchoring mockup for this variant. */
+  mockCaption: string;
 }
 
 const ROUTES: RouteMeta[] = [
   {
     id: "prompt",
     label: "Prompt desk",
-    title: "Shell context chrome",
     blurb:
       "You type a command; path, user, host, and app tokens sit above the input so you always see which project and machine you are on. " +
       "Left-arrow walks the tokens; paste preview scrolls when you dump a block. This is the everyday CLI desk — context stays visible without leaving the prompt.",
+    mockCaption: "Context tokens above the live command line",
   },
   {
     id: "standalone",
     label: "Standalone",
-    title: "Standalone layout",
     blurb:
       "Classic terminal: tabs along the top or left, and the live session surface shares the same window. " +
       "Open several shells for one job without scattering windows across the desktop — Windows Terminal–style.",
+    mockCaption: "Tabs and session surface in one window",
   },
   {
     id: "decoupled",
     label: "Decoupled index",
-    title: "Decoupled index",
     blurb:
       "A calling window holds the session index (tabs and thumbnails). Each live session is its own facsimile window you can drag, focus, minimize, or close. " +
       "Use this when you want a launcher/controller separate from the panes you are watching.",
+    mockCaption: "Index window plus separate session facsimiles",
   },
   {
     id: "manager",
     label: "Project manager",
-    title: "projectGroupedManager",
     blurb:
-      "Terminals spawned from DevCentr projects sit in a vertical, project-grouped manager. " +
+      "Terminals spawned from DevCentr projects sit in a vertical, project-grouped manager (`projectGroupedManager` in shell-architecture). " +
       "Click a grid cell or a tab: the matching project lights up and the others dull — so you always know which project owns the focused session.",
+    mockCaption: "Project-grouped rail beside DevCentr grid highlight",
   },
   {
     id: "zones",
     label: "Nested zones",
-    title: "Contained tiling zones",
     blurb:
       "Sessions tile inside zone windows (per-monitor style) that stay inside the app desk. " +
       "Spawn or delete a zone, register a project group into an empty zone, drag and minimize the zone chrome. " +
       "Group membership stays stable when the display moves — this is contained tiling, not replacing the OS window manager.",
+    mockCaption: "Contained tiling zones inside the app desk",
   },
   {
     id: "association",
     label: "Association",
-    title: "Session association",
     blurb:
       "A session process can register with another UI (decoupled index or project manager) and offer live thumbnails. " +
       "Re-associate when you switch how you want to supervise the same running work — the session keeps running; only the subscriber changes.",
+    mockCaption: "Sessions register with a supervising UI",
   },
 ];
 
@@ -106,14 +105,16 @@ function routeMeta(id: DemoRoute): RouteMeta {
  * Chrome order:
  * 1. Identity strip: org / repo (site nav only — repo → demo site home)
  * 2. VCS / GitHub logo → repo (only VCS link)
- * 3. Suite (demo) description + one anchoring screenshot/mockup
- * 4. Variant switcher
- * 5. Variant title + description (UI body follows in wrapDemo)
+ * 3. Suite (demo) description
+ * 4. Variant tab bar
+ * 5. One anchoring mockup for the active variant (swaps on tab select)
+ * 6. Variant heading + blurb (UI body follows in wrapDemo)
  */
 export function hubHtml(active: DemoRoute): string {
-  const links = ROUTES.map((r) => {
-    const cls = r.id === active ? "demo-variant-link active" : "demo-variant-link";
-    return `<a class="${cls}" href="#/${r.id}" data-route="${r.id}">${r.label}</a>`;
+  const tabs = ROUTES.map((r) => {
+    const selected = r.id === active;
+    const cls = selected ? "demo-variant-tab active" : "demo-variant-tab";
+    return `<a class="${cls}" href="#/${r.id}" data-route="${r.id}" role="tab" aria-selected="${selected}">${r.label}</a>`;
   }).join("");
   const meta = routeMeta(active);
   return `<header class="demo-hub" role="banner">
@@ -127,11 +128,12 @@ export function hubHtml(active: DemoRoute): string {
     <a class="vcs-link" href="${REPO_URL}" title="GitHub repository" aria-label="GitHub: ${REPO_LABEL}">${GITHUB_MARK}<span class="vcs-label">GitHub</span></a>
   </p>
   <p class="demo-suite-lede">${SUITE_LEDE}</p>
-  <figure class="demo-intro-anchor">
-    <img src="${INTRO_ANCHOR_SRC}" width="1122" height="585" alt="${INTRO_ANCHOR_ALT}" loading="eager" decoding="async" />
+  <nav class="demo-variant-tabs" role="tablist" aria-label="Layout variants">${tabs}</nav>
+  <figure class="demo-variant-mock" role="tabpanel" aria-label="${meta.label}">
+    ${variantMockHtml(active)}
+    <figcaption class="demo-variant-mock-caption">${meta.mockCaption}</figcaption>
   </figure>
-  <div class="demo-variants" role="navigation" aria-label="Layout variants">${links}</div>
-  <h1 class="demo-hub-title">${meta.title}</h1>
+  <h1 class="demo-hub-title">${meta.label}</h1>
   <p class="demo-variant-lede">${meta.blurb}</p>
 </header>`;
 }

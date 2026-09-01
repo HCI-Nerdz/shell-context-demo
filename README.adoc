@@ -25,7 +25,7 @@ Org demos index: link:https://hci-nerdz.github.io/demos/[hci-nerdz.github.io/dem
 | Index chrome + separate facsimile session windows
 
 | `#/manager`
-| projectGroupedManager + DevCentr grid highlight/dull
+| Project manager + DevCentr grid highlight/dull (`projectGroupedManager` in shell-architecture)
 
 | `#/zones`
 | Contained tiling / nested zones (spawn, delete, drag, minimize)

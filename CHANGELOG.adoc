@@ -1,5 +1,11 @@
 = Changelog
 
+== 2026-09-01 — Per-variant mockups + aligned labels
+
+* Variant tab bar sits **above** a single anchoring mockup that swaps per route (compact CSS facsimile previews in `src/demos/variant-mocks.ts`).
+* Tab label and section heading use the same human-readable name; code names (e.g. `projectGroupedManager`) appear only in blurbs or in-product labels where relevant.
+* Replaces the lone suite-level `intro-anchor.png` hero before the variant switcher.
+
 == 2026-08-30 — Identity strip is site nav only
 
 * Hub breadcrumb `HCI-Nerdz / shell-context-demo`: org → demos index, repo → this demo's site home (not GitHub).

@@ -75,7 +75,7 @@ export function renderManager(state: ManagerState): string {
     "manager",
     `<div class="ot-panel manager-layout">
   <div class="ot-mgr-window">
-    <div class="ot-os-title">Open Terminal · projectGroupedManager</div>
+    <div class="ot-os-title">Open Terminal · Project manager</div>
     <div class="ot-mgr-body">
       <aside class="ot-vrail">${rail}</aside>
       <section class="ot-session">

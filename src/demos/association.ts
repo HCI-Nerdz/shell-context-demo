@@ -16,7 +16,7 @@ export function defaultAssoc(): AssocState {
   return {
     subscribers: [
       { id: "sub-index", label: "Decoupled index" },
-      { id: "sub-mgr", label: "projectGroupedManager" },
+      { id: "sub-mgr", label: "Project manager" },
     ],
     sessions: [
       {

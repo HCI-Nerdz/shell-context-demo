@@ -10,6 +10,9 @@ Top context bar control: **1-line** / **2-line**.
 Preferred product default is 2-line; both stay interactive for compare.
 Spec: openshellorg/shell-architecture `prompt-spatial-layout.adoc`.
 
+## Demo chrome (2026-09-01)
+
+Hash-route suite uses **tabs above a swapping anchoring mockup** per skill `demo-site-wiring` (simple in-page pattern). Tab label === section heading; code names only in blurbs.
 
 ## Top-bar settings
 
