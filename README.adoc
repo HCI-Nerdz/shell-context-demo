@@ -64,6 +64,17 @@ pnpm dev
 
 Opens http://localhost:5175/ (Vite dev server).
 
+== Regenerate anchoring mockups
+
+Static PNGs under `public/mock/` (served) and `screenshots/` (docs mirror). Sources: `tools/mocks/*.html` with shared `tools/mock-frame.css`.
+
+[source,bash]
+----
+pnpm install
+pnpm exec playwright install chromium
+pnpm capture-mocks
+----
+
 == Demo controls (prompt desk)
 
 * **Left-arrow** — cycle token focus (path → user → host → app tokens)

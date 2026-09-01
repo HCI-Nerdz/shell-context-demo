@@ -12,7 +12,7 @@ Spec: openshellorg/shell-architecture `prompt-spatial-layout.adoc`.
 
 ## Demo chrome (2026-09-01)
 
-Hash-route suite uses **tabs above a swapping anchoring mockup** per skill `demo-site-wiring` (simple in-page pattern). Tab label === section heading; code names only in blurbs.
+Hash-route suite: **variant selector** (scoped separately) drives both a **static PNG mockup** (`public/mock/{variant}.png`, 1122×585) and the interactive desk. Captures from `tools/mocks/*.html` via `pnpm capture-mocks`. Anchoring images are non-interactive (`<img>` only).
 
 ## Top-bar settings
 

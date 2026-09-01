@@ -21,6 +21,8 @@ dist/
 
 !public/
 !public/**
+!public/mock/
+!public/mock/*.png
 
 !tools/
 !tools/**

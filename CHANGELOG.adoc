@@ -1,5 +1,12 @@
 = Changelog
 
+== 2026-09-01 — Static PNG mockups + scoped variant selector
+
+* Variant selector is visually separate from the anchoring mockup (tabs alter preview **and** desk, not “mockup chrome”).
+* Per-variant **static PNG** mockups (`public/mock/*.png`, mirrored under `screenshots/`) — macOS traffic-light window chrome, padded stage, fixed 1122×585 aspect.
+* Capture sources: `tools/mocks/*.html` + `pnpm capture-mocks` (Playwright). Non-interactive `<img>` in the page (`pointer-events: none`).
+* Replaces in-page CSS facsimile previews.
+
 == 2026-09-01 — Per-variant mockups + aligned labels
 
 * Variant tab bar sits **above** a single anchoring mockup that swaps per route (compact CSS facsimile previews in `src/demos/variant-mocks.ts`).

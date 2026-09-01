@@ -290,155 +290,66 @@ body {
   line-height: 1.5;
   color: #b4bac8;
 }
-/* Variant tab bar — above the swapping anchoring mockup. */
+/* Variant selector — scoped separately from anchoring mockup and demo stage. */
+.demo-variant-selector {
+  margin: 0 0 1.15rem;
+  max-width: 46rem;
+}
+.demo-variant-selector-hint {
+  margin: 0 0 0.45rem;
+  font-size: 0.72rem;
+  color: #7a8498;
+}
+.demo-variant-selector [role="tablist"],
 .demo-variant-tabs {
   display: flex;
   flex-wrap: wrap;
-  gap: 0;
-  margin: 0 0 0;
-  padding: 0.35rem 0.35rem 0;
-  border: 1px solid #2c3344;
-  border-bottom: none;
-  border-radius: 6px 6px 0 0;
-  background: #10141c;
-  max-width: min(42rem, 100%);
+  gap: 0.35rem;
 }
 .demo-variant-tab {
-  color: #9aa3b4;
+  color: #c8ccd4;
   text-decoration: none;
-  font-size: 0.78rem;
-  padding: 0.45rem 0.75rem;
-  border: 1px solid transparent;
-  border-bottom: none;
-  border-radius: 4px 4px 0 0;
-  background: transparent;
-  margin-bottom: -1px;
-}
-.demo-variant-tab:hover {
-  color: #d0d6e2;
+  font-size: 0.8rem;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid #3a4254;
+  border-radius: 3px;
   background: #151820;
 }
+.demo-variant-tab:hover { border-color: #6a7a94; color: #e6e8ef; }
 .demo-variant-tab.active {
-  background: #1a2030;
-  border-color: #2c3344;
-  border-bottom-color: #1a2030;
+  background: #243044;
+  border-color: #7a9ab8;
   color: #e8eef6;
   font-weight: 600;
 }
+.demo-variant-surface {
+  margin: 0 0 0.5rem;
+}
+/* Static PNG mockup — non-interactive memory-hook; fixed aspect from capture. */
 .demo-variant-mock {
   margin: 0 0 1rem;
   max-width: min(42rem, 100%);
+  pointer-events: none;
+  user-select: none;
+}
+.demo-variant-mock-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1122 / 585;
+  object-fit: contain;
+  border-radius: 6px;
   border: 1px solid #2c3344;
-  border-radius: 0 0 6px 6px;
   background: #0a0c10;
-  overflow: hidden;
 }
 .demo-variant-mock-caption {
-  margin: 0;
-  padding: 0.45rem 0.65rem 0.55rem;
+  margin: 0.45rem 0 0;
+  padding: 0;
   font-size: 0.72rem;
   color: #7a8498;
-  border-top: 1px solid #222833;
-  background: #10141c;
+  border: none;
+  background: transparent;
 }
-/* Compact CSS facsimile previews (one visible at a time). */
-.scd-mock {
-  display: block;
-  min-height: 9rem;
-  padding: 0.65rem;
-  background: linear-gradient(180deg, #0f1117 0%, #0a0c10 100%);
-}
-.scd-mock-bar { display: flex; gap: 0.3rem; margin-bottom: 0.45rem; }
-.scd-mock-bar span {
-  width: 8px; height: 8px; border-radius: 50%; display: block;
-  background: #5ca46a;
-}
-.scd-mock-bar span:first-child { background: #c45c5c; }
-.scd-mock-bar span:nth-child(2) { background: #c4a35c; }
-.scd-mock-host { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.55rem; }
-.scd-mock-chip {
-  font-size: 0.62rem; padding: 0.12rem 0.35rem; border-radius: 2px;
-  background: #2a2d35; color: #9aa3b4; border: 1px solid #3a4254;
-}
-.scd-mock-chip.on { background: #1a3a5c; color: #b8d4f0; border-color: #2a5a8c; }
-.scd-mock-term { display: flex; align-items: center; gap: 0.35rem; }
-.scd-mock-gutter { color: #f0a020; font-size: 0.75rem; width: 1rem; text-align: right; }
-.scd-mock-line { font-size: 0.72rem; color: #e6e8ef; }
-.scd-mock-line.dim { color: #7a8498; display: block; margin-bottom: 0.2rem; }
-.scd-mock-tabs { display: flex; gap: 0.25rem; margin-bottom: 0.45rem; }
-.scd-mock-tabs span {
-  font-size: 0.62rem; padding: 0.15rem 0.45rem; border-radius: 2px 2px 0 0;
-  background: #151820; color: #8a92a4; border: 1px solid #2c3344;
-}
-.scd-mock-tabs span.on { background: #1a2030; color: #e8eef6; border-bottom-color: #1a2030; }
-.scd-mock-pane {
-  min-height: 4.5rem; padding: 0.45rem; background: #12151c;
-  border: 1px solid #2c3344; border-radius: 0 3px 3px 3px;
-}
-.scd-mock-decoupled { position: relative; min-height: 10rem; }
-.scd-mock-index {
-  position: absolute; left: 0.65rem; top: 0.65rem; width: 5.5rem;
-  padding: 0.35rem; background: #151820; border: 1px solid #3a4660; border-radius: 4px;
-}
-.scd-mock-mini-title { display: block; font-size: 0.58rem; color: #8a92a4; margin-bottom: 0.25rem; }
-.scd-mock-thumb {
-  display: block; height: 0.55rem; margin-bottom: 0.2rem; border-radius: 2px;
-  background: #2a3144;
-}
-.scd-mock-thumb.on { background: #3a5a78; }
-.scd-mock-float {
-  position: absolute; width: 4.5rem; height: 3rem;
-  border: 1px solid #3a4660; border-radius: 4px; background: #12151c;
-}
-.scd-mock-float.a { right: 1.5rem; top: 1.2rem; }
-.scd-mock-float.b { right: 2.5rem; top: 4rem; opacity: 0.85; }
-.scd-mock-manager { display: grid; grid-template-columns: 5.5rem 1fr; gap: 0.45rem; min-height: 9rem; }
-.scd-mock-rail {
-  padding: 0.35rem; background: #151820; border: 1px solid #2c3344; border-radius: 3px;
-}
-.scd-mock-group {
-  display: block; font-size: 0.55rem; color: #b8c0d0; margin: 0.2rem 0 0.15rem;
-}
-.scd-mock-group.dull { color: #6e7688; }
-.scd-mock-vtab {
-  display: block; height: 0.5rem; margin-bottom: 0.15rem; border-radius: 2px;
-  background: #2a3144;
-}
-.scd-mock-vtab.on { background: #3a5a78; }
-.scd-mock-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.35rem; align-content: start; }
-.scd-mock-cell {
-  min-height: 3.5rem; border-radius: 3px; border: 1px solid #3a5a78; background: #1a3048;
-}
-.scd-mock-cell.dull { opacity: 0.45; border-color: #2c3344; background: #151820; }
-.scd-mock-zones { display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem; }
-.scd-mock-zone {
-  min-height: 7rem; padding: 0.35rem; border: 1px solid #3a4660; border-radius: 4px;
-  background: #12151c;
-}
-.scd-mock-zone.dull { opacity: 0.55; }
-.scd-mock-zone-title { display: block; font-size: 0.58rem; color: #8a92a4; margin-bottom: 0.35rem; }
-.scd-mock-tile {
-  display: block; height: 2rem; margin-bottom: 0.25rem; border-radius: 2px;
-  background: #243044; border: 1px solid #3a5a78;
-}
-.scd-mock-tile.on { background: #2a4560; }
-.scd-mock-tile.empty {
-  height: 4rem; border-style: dashed; background: transparent; opacity: 0.5;
-}
-.scd-mock-assoc { display: grid; grid-template-columns: 1fr 5.5rem; gap: 0.45rem; }
-.scd-mock-card {
-  padding: 0.35rem; border: 1px solid #2c3344; border-radius: 3px; background: #151820;
-}
-.scd-mock-card.on { border-color: #3a5a78; }
-.scd-mock-card-title { display: block; font-size: 0.62rem; color: #c8ccd4; margin-bottom: 0.25rem; }
-.scd-mock-card-body {
-  display: block; height: 3rem; border-radius: 2px; background: #0f1117;
-}
-.scd-mock-subs span {
-  display: block; font-size: 0.58rem; padding: 0.2rem 0.3rem; margin-bottom: 0.15rem;
-  border-radius: 2px; background: #151820; color: #7a8498;
-}
-.scd-mock-subs span.on { background: #1a3048; color: #b8d4f0; }
 .demo-hub-title {
   margin: 0.15rem 0 0.4rem;
   font-size: 1.15rem;
