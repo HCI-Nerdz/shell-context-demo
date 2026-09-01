@@ -274,7 +274,7 @@ export function mountPromptDemo(app: HTMLDivElement): () => void {
       });
     });
 
-    app.querySelector<HTMLDivElement>(".terminal")?.focus();
+    app.querySelector<HTMLDivElement>(".terminal")?.focus({ preventScroll: true });
   }
 
   const onKey = (ev: KeyboardEvent) => {

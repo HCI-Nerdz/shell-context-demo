@@ -83,7 +83,9 @@ function mountRoute(route: DemoRoute): void {
 }
 
 function syncFromHash(): void {
+  const scrollY = window.scrollY;
   mountRoute(parseRoute(location.hash));
+  window.scrollTo({ top: scrollY, left: 0, behavior: "instant" });
 }
 
 window.addEventListener("hashchange", syncFromHash);
